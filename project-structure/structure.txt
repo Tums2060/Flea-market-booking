@@ -1,0 +1,12 @@
+school-field-booking/
+├── index.html            # 🌐 Homepage where students choose a slot and input their name
+├── pay.html              # 💳 Payment page where student confirms details and pays (mock or real)
+├── receipt.html          # 🧾 Final confirmation page showing booking & payment receipt
+├── assets/
+│   ├── css/
+│   │   └── styles.css     # 🎨 Custom written CSS styling (colors, layout, fonts, etc.)
+│   └── js/
+│       ├── main.js        # 🧠 Logic for index.html — saves user info to localStorage
+│       └── payment.js     # 💡 Logic for pay.html — shows booking info & stores payment code
+        |---receipt.js
+├── README.md             # 📘 Project overview: setup, usage, and future improvements

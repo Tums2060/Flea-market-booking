@@ -1,0 +1,486 @@
+/* Reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom font import (already included in HTML) */
+body {
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Enhanced gradient animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Stunning custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #e73c7e, #23a6d5);
+  border-radius: 6px;
+}
+
+/* General section styling with glass morphism effect */
+section {
+  max-width: 1400px;
+  margin: 3rem auto;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  min-height: 80vh;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+section:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Modern Hero Section with dynamic gradient */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #FF6CAB, #7366FF);
+  color: white;
+  border-radius: 0 0 30px 30px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Abstract decorative elements for hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 0;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  animation: fadeInDown 1.2s ease-out;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+.hero img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 20px;
+  margin: 2rem auto;
+  object-fit: cover;
+  max-height: 500px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: perspective(1000px) rotateX(5deg);
+  position: relative;
+  z-index: 1;
+}
+
+.hero p {
+  font-size: 2.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+/* About Section with modern layout and multiple images */
+.about {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+}
+
+.about h2 {
+  font-size: 3.8rem;
+  color: #222;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.about h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #FF6CAB, #7366FF);
+  margin-top: 15px;
+  border-radius: 2px;
+}
+
+/* New layout for two about images */
+.about-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-img {
+  width: 100%;
+  height: 400px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+}
+
+.about-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.about-content {
+  margin-top: 2rem;
+}
+
+.about p {
+  font-size: 1.8rem;
+  line-height: 1.7;
+}
+
+/* Gallery Section with modern hover effects and grid layout */
+.gallery {
+  text-align: center;
+  min-height: 80vh;
+}
+
+.gallery h2 {
+  font-size: 3.8rem;
+  color: #222;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.gallery h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, #FF6CAB, #7366FF);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* New gallery container for multiple images */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  display: block;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* How to Book Section with modern step treatment */
+.how-to-book {
+  text-align: center;
+  min-height: 80vh;
+}
+
+.how-to-book h2 {
+  font-size: 3.8rem;
+  color: #222;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.how-to-book h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, #FF6CAB, #7366FF);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.how-to-book ol {
+  counter-reset: step-counter;
+  list-style: none;
+  font-size: 1.8rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.how-to-book li {
+  margin-bottom: 2rem;
+  padding: 1.5rem 2rem 1.5rem 4rem;
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.how-to-book li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.how-to-book li::before {
+  counter-increment: step-counter;
+  content: counter(step-counter);
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #FF6CAB, #7366FF);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Modern styled Book Now Button with animation */
+.book-now-link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+#bookNowBtn {
+  display: inline-block;
+  margin: 4rem auto;
+  padding: 1.8rem 4rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #FF6CAB, #7366FF);
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 25px rgba(115, 102, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#bookNowBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #7366FF, #FF6CAB);
+  transition: opacity 0.4s ease;
+  z-index: -1;
+  opacity: 0;
+}
+
+#bookNowBtn:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(115, 102, 255, 0.6);
+}
+
+#bookNowBtn:hover::before {
+  opacity: 1;
+}
+
+#bookNowBtn:active {
+  transform: translateY(-2px);
+}
+
+/* Enhanced animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Modern Responsive Design */
+@media (max-width: 1024px) {
+  .about-images {
+    grid-template-columns: 1fr;
+  }
+  
+  .about h2::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .about {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1rem;
+    min-height: 80vh;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero p {
+    font-size: 1.8rem;
+  }
+
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about h2, .gallery h2, .how-to-book h2 {
+    font-size: 3rem;
+  }
+
+  .about p, .how-to-book li {
+    font-size: 1.6rem;
+  }
+  
+  .about-img {
+    height: 300px;
+  }
+
+  #bookNowBtn {
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
+  }
+
+  section {
+    padding: 3rem 1.5rem;
+    margin: 2rem 1rem;
+    min-height: 70vh;
+  }
+  
+  .how-to-book li::before {
+    left: -10px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+  }
+
+  .about h2, .gallery h2, .how-to-book h2 {
+    font-size: 2.5rem;
+  }
+
+  .about p, .how-to-book li {
+    font-size: 1.4rem;
+  }
+  
+  .about-img {
+    height: 250px;
+  }
+
+  #bookNowBtn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.6rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+    min-height: 60vh;
+  }
+  
+  .how-to-book li {
+    padding: 1.2rem 1.5rem 1.2rem 3rem;
+  }
+}
